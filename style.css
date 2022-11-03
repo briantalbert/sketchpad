@@ -1,4 +1,12 @@
-
+body {
+    background-color: coral;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .row {
     display: flex;
     flex-direction: row;
@@ -10,6 +18,7 @@
     border: 2px;
     border-color: black;
     border-style: solid;
+    border-radius: 5px;
     width: fit-content;
     background-color: grey;
 }
@@ -21,4 +30,6 @@
 .change-sides {
     display: flex;
     align-items: center;
+    margin: 15px;
+    border-radius: 7px;
 }

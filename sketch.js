@@ -1,3 +1,4 @@
+colorWheel = ['white','red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 makeBoard()
 
 resizeButton = document.querySelector('.change-sides')
@@ -14,7 +15,6 @@ function makeBoard(numBlocks = 4) {
 }
 
 function createGrid(numBlocks = 4) {
-    let idNum = 1
     let board = document.querySelector('.board')
     let sideLength = (480/numBlocks)
 
@@ -24,11 +24,9 @@ function createGrid(numBlocks = 4) {
 
         for (let i = 1; i <= numBlocks; i++){
             let div = document.createElement('div')
-            div.setAttribute('id', idNum)
             div.classList.add('sketchbox')
             div.setAttribute('style', `width:${sideLength+'px'}; height:${sideLength+'px'}; `)
             row.appendChild(div)
-            idNum++            
         }
 
     board.appendChild(row)

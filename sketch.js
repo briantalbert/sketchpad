@@ -24,14 +24,22 @@ function createGrid(numBlocks = 4) {
 
         for (let i = 1; i <= numBlocks; i++){
             let div = document.createElement('div')
-            div.classList.add('sketchbox')
-            div.setAttribute('style', `width:${sideLength+'px'}; height:${sideLength+'px'}; `)
-            row.appendChild(div)
+            styleBox(div, row, sideLength)
         }
 
     board.appendChild(row)
     }
 
+}
+
+function styleBox(div, row, sideLength) {
+    console.log('stylebox')
+    console.log(div)
+    console.log(row)
+    div.classList.add('sketchbox')
+    div.setAttribute('id', 0)
+    div.setAttribute('style', `width:${sideLength+'px'}; height:${sideLength+'px'}; `)
+    row.appendChild(div)
 }
 
 function getNumBlocks() {
@@ -49,7 +57,8 @@ function getNumBlocks() {
 function addHoverListener() {
     let boxes = document.querySelectorAll('.sketchbox')
     boxes.forEach(box => box.addEventListener('mouseover', changeBackground => {
-        box.classList.add('colored')
+        box.id = (+box.id + 1) % colorWheel.length
+        box.style.backgroundColor = (colorWheel[box.id])
     }))
 }
 

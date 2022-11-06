@@ -4,9 +4,14 @@ makeBoard()
 resizeButton = document.querySelector('.change-sides')
 resizeButton.addEventListener('click', getSides => {
     clearBoard()
-    console.log('board cleared')
     let num = getNumBlocks()
     makeBoard(num)
+})
+
+resetButton = document.querySelector('.reset')
+resetButton.addEventListener('click', () => {
+    clearBoard()
+    makeBoard()
 })
 
 function makeBoard(numBlocks = 4) {

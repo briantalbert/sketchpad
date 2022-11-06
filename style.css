@@ -12,6 +12,11 @@ body {
     flex-direction: row;
 }
 
+.top-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
 .board {
     display: flex;
     flex-direction: column;
@@ -27,7 +32,8 @@ body {
     background-color: purple;
 }
 
-.change-sides {
+.change-sides,
+.reset {
     display: flex;
     align-items: center;
     margin: 15px;
